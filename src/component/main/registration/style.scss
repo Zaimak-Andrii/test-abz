@@ -1,0 +1,90 @@
+@import '../../../variables.scss';
+
+$height: 54px;
+
+.upload {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+
+  margin: 0;
+  margin-top: 40px;
+
+  height: $height;
+
+  &__file {
+    display: inline;
+    visibility: hidden;
+
+    &::before {
+      cursor: pointer;
+      content: 'Upload';
+
+      display: flex;
+      box-sizing: border-box;
+      visibility: visible;
+
+      justify-content: center;
+      align-items: center;
+
+      margin: 0;
+      width: 83px;
+      height: $height;
+
+      border: 1px solid $color-black;
+      border-radius: 4px 0px 0px 4px;
+
+      @extend %body-font;
+    }
+  }
+
+  &__label {
+    z-index: -1;
+
+    display: flex;
+    position: absolute;
+
+    justify-content: left;
+    align-items: center;
+    flex-grow: 1;
+
+    width: 100%;
+    height: $height;
+
+    border: 1px solid $color-input-border;
+    border-radius: 4px;
+
+    padding-left: 99px;
+
+    @extend %body-font;
+
+    color: $color-black;
+
+    &--empty {
+      color: $color-input-text;
+    }
+  }
+
+  &__helper-text {
+    display: none;
+    position: absolute;
+    white-space: pre;
+
+    top: calc($height + 4px);
+    width: 100%;
+  }
+
+  &--error {
+    & > .upload {
+      &__label {
+        border: 2px solid $color-error;
+      }
+      &__file::before {
+        border: 2px solid $color-error;
+      }
+      &__helper-text {
+        display: block;
+      }
+    }
+  }
+}

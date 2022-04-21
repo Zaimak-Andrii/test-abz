@@ -1,0 +1,19 @@
+.header {
+  height: 60px;
+  background-color: '#FFFFFF';
+
+  & .wrap {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  & .logo {
+    width: 104px;
+  }
+
+  & button {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

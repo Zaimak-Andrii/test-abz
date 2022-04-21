@@ -1,0 +1,27 @@
+$color-yellow: #f4e041;
+$color-blue: #00bdd3;
+$color-background: #f8f8f8;
+$color-black: rgba(0, 0, 0, 0.87);
+$color-input-border: #d0cfcf;
+$color-input-text: #7e7e7e;
+$color-error: #cb3d40;
+
+$font-family: 'Nunito', sans-serif;
+
+%font-style {
+  font-family: $font-family;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%header-font {
+  @extend %font-style;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+%body-font {
+  @extend %font-style;
+  font-size: 16px;
+  line-height: 26px;
+}
